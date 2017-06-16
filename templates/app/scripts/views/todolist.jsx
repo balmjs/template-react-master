@@ -14,7 +14,7 @@ class TodoList extends Component {
         <button onClick={this.onReset}>
           Seconds passed: {this.props.store.todoList.timer}
         </button>
-        <DevTools />
+        { this.props.store.DEBUG && <DevTools /> }
       </div>
     );
   }

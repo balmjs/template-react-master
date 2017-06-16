@@ -6,7 +6,8 @@ module.exports = {
     }
   },
   entry: {
-    react: ['react', 'react-dom', 'react-router-dom'],
+    react: ['react', 'react-dom', 'react-router-dom', 'axios'],
+    mobx: ['mobx', 'mobx-react', 'mobx-react-devtools'],
     main: './app/scripts/main.js' // entry js file
   },
   assets: {
