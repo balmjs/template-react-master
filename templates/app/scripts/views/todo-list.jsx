@@ -49,7 +49,6 @@ class TodoView extends Component {
           onChange={ this.onToggleCompleted }
         />
         { todo.task }
-        ({todo.completed})
       </li>
     );
   }
