@@ -5,7 +5,7 @@ balm.config = {
   server: {
     open: true,
     proxyTable: config.proxyTable,
-    historyApiFallback: true // for react-router-dom use 'BrowserRouter'
+    historyApiFallback: true // For react-router-dom use 'BrowserRouter'
   },
   roots: {
     source: 'app'
@@ -17,9 +17,19 @@ balm.config = {
       img: 'images'
     }
   },
+  html: {
+    regex: {
+      css: '/css',
+      js: '/js'
+    }
+  },
   styles: {
     ext: 'css', // PostCSS
-    autoprefixer: ['last 2 versions']
+    autoprefixer: [
+      '> 1%',
+      'last 2 versions',
+      'not ie <= 8'
+    ]
   },
   scripts: {
     entry: config.entry,
@@ -33,12 +43,12 @@ balm.config = {
 
 balm.go(function(mix) {
   if (balm.config.production) {
-    // for test
+    // For test data
     mix.copy('./app/data/*', './dist/data');
 
-    // for static
+    // Publish assets
     mix.publish();
-    // for template
+    // Publish templates
     Object.keys(config.publish).forEach(function(key) {
       mix.publish(key, config.publish[key].target, config.publish[key].option || {});
     });

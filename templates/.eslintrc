@@ -1,16 +1,19 @@
 {
   "root": true,
-  "parser": "babel-eslint",
+  "env": {
+    "browser": true
+  },
   "parserOptions": {
-    "sourceType": "module"
+    "ecmaVersion": 2017,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
-  env: {
-    browser: true
-  },
+  "plugins": [
+    "react"
+  ],
   "rules": {
-    "quotes": [
-      2,
-      "single"
-    ]
+    "quotes": [2, "single"]
   }
 }

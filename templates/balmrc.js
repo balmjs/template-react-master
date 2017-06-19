@@ -8,15 +8,16 @@ module.exports = {
   entry: {
     react: ['react', 'react-dom', 'react-router-dom', 'axios'],
     mobx: ['mobx', 'mobx-react', 'mobx-react-devtools'],
-    main: './app/scripts/main.js' // entry js file
+    main: './app/scripts/main.jsx' // Entry js file
   },
   assets: {
-    root: 'assets', // replace 'assets' to your remote project root
-    publicPath: 'public'
+    root: 'assets', // Replace 'assets' to your remote project root
+    publicPath: 'public',
+    subDir: 'web'
   },
   publish: {
     'index.html': {
-      target: 'views', // replace 'views' to your remote project views path
+      target: 'views', // Replace 'views' to your remote project views path
       option: {
         basename: 'index',
         extname: '.php'
