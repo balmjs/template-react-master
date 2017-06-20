@@ -4,16 +4,6 @@ import { observer } from 'mobx-react';
 
 @observer
 class TodoList extends Component {
-  componentDidMount() {
-    const todoStore = this.props.store.todo;
-    // mock data
-    todoStore.addTodo("read MobX tutorial");
-    todoStore.addTodo("try MobX");
-    todoStore.todos[0].completed = true;
-    todoStore.todos[1].task = "try MobX in own project";
-    todoStore.todos[0].task = "grok MobX tutorial";
-  }
-
   render() {
     const store = this.props.store.todo;
     return (

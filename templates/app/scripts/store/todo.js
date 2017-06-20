@@ -40,4 +40,11 @@ class TodoStore {
 
 const todoStore = new TodoStore();
 
+// mock data
+todoStore.addTodo("read MobX tutorial");
+todoStore.addTodo("try MobX");
+todoStore.todos[0].completed = true;
+todoStore.todos[1].task = "try MobX in own project";
+todoStore.todos[0].task = "grok MobX tutorial";
+
 export default todoStore;
