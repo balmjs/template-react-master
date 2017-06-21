@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, NavLink as Link, Route, Switch } from 'react-router-dom';
+import { Provider } from 'mobx-react';
 import routes from '../../routers';
 import RouteWithSubRoutes from '../../routers/config';
 import store from '../../store';
@@ -17,17 +18,19 @@ class App extends Component {
         </div>
         <p className="app-intro">thx <a href="//balmjs.com/">BalmJS</a></p>
         <hr />
-        <Router>
-          <div className="container">
-            <MyMenu store={store.menu} />
-            <Switch>
-              <Route exact path="/" component={Home} />
-              {routes.map((route, index) => (
-                <RouteWithSubRoutes key={index} {...route} />
-              ))}
-            </Switch>
-          </div>
-        </Router>
+        <Provider {...store}>
+          <Router>
+            <div className="container">
+              <MyMenu />
+              <Switch>
+                <Route exact path="/" component={Home} />
+                {routes.map((route, index) => (
+                  <RouteWithSubRoutes key={index} {...route} />
+                ))}
+              </Switch>
+            </div>
+          </Router>
+        </Provider>
       </div>
     );
   }

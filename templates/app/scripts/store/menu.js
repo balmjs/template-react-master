@@ -1,8 +1,4 @@
-import {
-  observable,
-  autorun,
-  action
-} from 'mobx';
+import { observable, autorun } from 'mobx';
 import axios from 'axios';
 
 class MenuStore {
@@ -16,7 +12,7 @@ class MenuStore {
     }
   }
 
-  @action async getMenu() {
+  async getMenu() {
     let response = await axios.get('/data/menu.json');
     let items = response.data;
     this.items = items;

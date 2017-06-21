@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { observer } from 'mobx-react';
+import { observer, inject } from 'mobx-react';
 // import DevTools from 'mobx-react-devtools';
 
+@inject('todo')
 @observer
 class TodoList extends Component {
   render() {
-    const store = this.props.store.todo;
+    const store = this.props.todo;
     return (
       <div>
         { store.report }
@@ -23,7 +24,7 @@ class TodoList extends Component {
   }
 
   onNewTodo = () => {
-    this.props.store.todo.addTodo(prompt('Enter a new todo:', 'coffee plz'));
+    this.props.todo.addTodo(prompt('Enter a new todo:', 'coffee plz'));
   }
 }
 
