@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
-// import DevTools from 'mobx-react-devtools';
+import DevTools from 'mobx-react-devtools';
 
-@inject('todo')
+@inject('DEBUG', 'todo')
 @observer
 class TodoList extends Component {
   render() {
@@ -18,7 +18,7 @@ class TodoList extends Component {
         { store.pendingRequests > 0 ? <marquee>Loading...</marquee> : null }
         <button onClick={ this.onNewTodo }>New Todo</button>
         <small>(double-click a todo to edit)</small>
-        {/*<DevTools />*/}
+        { this.props.DEBUG && <DevTools /> }
       </div>
     );
   }
