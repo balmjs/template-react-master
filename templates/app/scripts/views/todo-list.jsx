@@ -8,7 +8,7 @@ class TodoList extends Component {
   render() {
     const store = this.props.todo;
     return (
-      <div>
+      <div className="page--todo todo-list">
         { store.report }
         <ul>
         { store.todos.map(

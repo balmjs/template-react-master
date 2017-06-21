@@ -2,6 +2,9 @@
   "name": "Home",
   "url": "/home"
 }, {
+  "name": "Topic",
+  "url": "/topics"
+}, {
   "name": "Todo List",
   "url": "/todo-list"
 }]
