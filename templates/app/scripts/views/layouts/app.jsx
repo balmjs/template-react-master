@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, NavLink as Link, Route, Switch } from 'react-router-dom';
 import { Provider } from 'mobx-react';
-import routes from '../../routers';
-import RouteWithSubRoutes from '../../routers/config';
+import routes from '../../routes';
+import RouteWithSubRoutes from '../../routes/config';
 import store from '../../store';
 import MyMenu from '../components/menu';
 import Home from '../home';
