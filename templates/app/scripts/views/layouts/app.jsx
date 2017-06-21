@@ -4,8 +4,9 @@ import { Provider } from 'mobx-react';
 import routes from '../../routes';
 import RouteWithSubRoutes from '../../routes/config';
 import store from '../../store';
-import MyMenu from '../components/menu';
-import Home from '../home';
+import { asyncComponent } from '../../helpers';
+const MyMenu = asyncComponent(() => import('../components/menu'));
+const Home = asyncComponent(() => import('../home'));
 import logo from '../../../images/logo.svg';
 
 class App extends Component {
