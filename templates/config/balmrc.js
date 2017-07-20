@@ -19,12 +19,6 @@ module.exports = {
       img: 'images'
     }
   },
-  html: {
-    regex: {
-      css: '/css',
-      js: '/js'
-    }
-  },
   styles: {
     ext: 'scss',
     autoprefixer: [
@@ -38,11 +32,11 @@ module.exports = {
       react: ['react', 'react-dom', 'react-router-dom', 'axios'],
       mobx: ['mobx', 'mobx-react', 'mobx-react-devtools'],
       main: './app/scripts/main.jsx' // Entry js file
-    },
-    publicPath: '/'
+    }
   },
   cache: true,
   assets: {
+    publicUrl: '/',
     root: 'assets', // Replace 'assets' to your remote project root
     publicPath: 'public',
     subDir: 'web'
