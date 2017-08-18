@@ -15,10 +15,11 @@
     "react-router-dom": "^4.1.1"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.3",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
-    "balm": "^0.8.1",
+    "balm": "^0.8.6",
     "gulp": "^3.9.1",
     "mobx-react-devtools": "^4.2.15"
   }
