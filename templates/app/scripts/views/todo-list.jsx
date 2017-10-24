@@ -5,6 +5,18 @@ import DevTools from 'mobx-react-devtools';
 @inject('DEBUG', 'todo')
 @observer
 class TodoList extends Component {
+  constructor(props) {
+    super(props);
+    this.onNewTodo = this.onNewTodo.bind(this);
+  }
+
+  onNewTodo() {
+    let result = prompt('Enter a new todo:', 'coffee plz');
+    if (result) {
+      this.props.todo.addTodo(result);
+    }
+  }
+
   render() {
     const store = this.props.todo;
     return (
@@ -22,14 +34,26 @@ class TodoList extends Component {
       </div>
     );
   }
-
-  onNewTodo = () => {
-    this.props.todo.addTodo(prompt('Enter a new todo:', 'coffee plz'));
-  }
 }
 
 @observer
 class TodoView extends Component {
+  constructor(props) {
+    super(props);
+    this.onToggleCompleted = this.onToggleCompleted.bind(this);
+    this.onRename = this.onRename.bind(this);
+  }
+
+  onToggleCompleted() {
+    const todo = this.props.todo;
+    todo.completed = !todo.completed;
+  }
+
+  onRename() {
+    const todo = this.props.todo;
+    todo.task = prompt('Task name', todo.task) || todo.task;
+  }
+
   render() {
     const todo = this.props.todo;
     return (
@@ -42,16 +66,6 @@ class TodoView extends Component {
         { todo.task }
       </li>
     );
-  }
-
-  onToggleCompleted = () => {
-    const todo = this.props.todo;
-    todo.completed = !todo.completed;
-  }
-
-  onRename = () => {
-    const todo = this.props.todo;
-    todo.task = prompt('Task name', todo.task) || todo.task;
   }
 }
 
