@@ -1,5 +1,5 @@
 export default {
   base: {
-    getMenu: '/data/menu.json',
+    getMenu: '/data/menu.json'
   }
 };

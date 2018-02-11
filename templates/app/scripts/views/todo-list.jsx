@@ -21,16 +21,14 @@ class TodoList extends Component {
     const store = this.props.todo;
     return (
       <div className="page--todo todo-list">
-        { store.report }
+        {store.report}
         <ul>
-        { store.todos.map(
-          (todo, idx) => <TodoView todo={ todo } key={ idx } />
-        ) }
+          {store.todos.map((todo, idx) => <TodoView todo={todo} key={idx} />)}
         </ul>
-        { store.pendingRequests > 0 ? <marquee>Loading...</marquee> : null }
-        <button onClick={ this.onNewTodo }>New Todo</button>
+        {store.pendingRequests > 0 ? <marquee>Loading...</marquee> : null}
+        <button onClick={this.onNewTodo}>New Todo</button>
         <small>(double-click a todo to edit)</small>
-        { this.props.DEBUG && <DevTools /> }
+        {this.props.DEBUG && <DevTools />}
       </div>
     );
   }
@@ -57,13 +55,13 @@ class TodoView extends Component {
   render() {
     const todo = this.props.todo;
     return (
-      <li onDoubleClick={ this.onRename }>
+      <li onDoubleClick={this.onRename}>
         <input
           type="checkbox"
-          checked={ todo.completed }
-          onChange={ this.onToggleCompleted }
+          checked={todo.completed}
+          onChange={this.onToggleCompleted}
         />
-        { todo.task }
+        {todo.task}
       </li>
     );
   }

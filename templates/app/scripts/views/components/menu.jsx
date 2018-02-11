@@ -10,11 +10,11 @@ class Menu extends Component {
     return (
       <nav>
         <ul className="site-menu">
-          {this.props.menu.items.map((item, index) =>
+          {this.props.menu.items.map((item, index) => (
             <li key={index}>
               <Link to={item.url}>{item.name}</Link>
             </li>
-          )}
+          ))}
         </ul>
       </nav>
     );
