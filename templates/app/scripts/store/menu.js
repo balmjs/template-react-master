@@ -13,8 +13,10 @@ class MenuStore {
   }
 
   async getMenu() {
-    let menu = await API.getMenu();
-    this.items = menu;
+    let { success, data } = await API.getMenu();
+    if (success) {
+      this.items = data;
+    }
   }
 }
 

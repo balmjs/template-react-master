@@ -38,7 +38,7 @@ class TodoStore {
 
 const todoStore = new TodoStore();
 
-// mock data
+// Mock data
 todoStore.addTodo('read MobX tutorial');
 todoStore.addTodo('try MobX');
 todoStore.todos[0].completed = true;

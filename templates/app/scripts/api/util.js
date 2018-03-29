@@ -1,13 +1,12 @@
-import { OK } from '../config/constants';
+import { STATUS_OK } from '../config/constants';
 
 export const callback = ({ code, data, message }) => {
   let result = {
     success: false,
-    data,
-    message
+    data
   };
 
-  if (code === OK) {
+  if (code === STATUS_OK) {
     result.success = true;
   } else {
     alert(message);
