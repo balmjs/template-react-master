@@ -7,7 +7,7 @@ import store from '../../store';
 import { asyncComponent } from '../../helpers';
 const MyMenu = asyncComponent(() => import('../components/menu'));
 const Home = asyncComponent(() => import('../home'));
-import logo from '../../../images/logo.svg';
+import logo from '../../assets/logo.svg';
 
 class App extends Component {
   render() {

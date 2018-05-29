@@ -16,8 +16,7 @@ module.exports = {
   paths: {
     source: {
       css: 'styles',
-      js: 'scripts',
-      img: 'images'
+      js: 'scripts'
     }
   },
   styles: {
