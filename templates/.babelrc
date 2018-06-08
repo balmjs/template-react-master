@@ -1,7 +1,7 @@
 {
   "presets": [
-    "react",
     ["env", {"modules": false}],
+    "react",
     "stage-1"
   ],
   "plugins": [
