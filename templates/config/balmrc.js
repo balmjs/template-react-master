@@ -34,7 +34,7 @@ module.exports = {
   assets: {
     publicUrl: '/',
     root: 'assets', // Replace 'assets' to your remote project root
-    publicPath: 'public',
+    mainDir: 'public',
     subDir: 'web'
   }
   // More Config
