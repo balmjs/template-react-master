@@ -1,5 +1,5 @@
-import { asyncComponent } from '../helpers';
-const TodoList = asyncComponent(() => import('../views/todo-list'));
+import { asyncComponent } from '@/helpers';
+const TodoList = asyncComponent(() => import('@/views/todo-list'));
 
 let todoRoutes = [
   {

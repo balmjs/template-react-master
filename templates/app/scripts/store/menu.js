@@ -1,5 +1,5 @@
 import { observable, autorun } from 'mobx';
-import API from '../api';
+import API from '@/api';
 
 class MenuStore {
   @observable items = [];
@@ -13,7 +13,7 @@ class MenuStore {
   }
 
   async getMenu() {
-    let { success, data } = await API.getMenu();
+    let { success, data } = await API.base.getMenu();
     if (success) {
       this.items = data;
     }

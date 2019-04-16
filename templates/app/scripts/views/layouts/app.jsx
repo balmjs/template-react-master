@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'mobx-react';
-import routes from '../../routes';
-import RouteWithSubRoutes from '../../routes/config';
-import store from '../../store';
-import { asyncComponent } from '../../helpers';
-const MyMenu = asyncComponent(() => import('../components/menu'));
-const Home = asyncComponent(() => import('../home'));
-import logo from '../../assets/logo.svg';
+import routes from '@/routes';
+import RouteWithSubRoutes from '@/routes/config';
+import store from '@/store';
+import { asyncComponent } from '@/helpers';
+const MyMenu = asyncComponent(() => import('@/views/components/menu'));
+const Home = asyncComponent(() => import('@/views/home'));
+import logo from '@/assets/logo.svg';
 
 class App extends Component {
   render() {

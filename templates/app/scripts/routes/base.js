@@ -1,5 +1,5 @@
-import { asyncComponent } from '../helpers';
-const Home = asyncComponent(() => import('../views/home'));
+import { asyncComponent } from '@/helpers';
+const Home = asyncComponent(() => import('@/views/home'));
 
 let baseRoutes = [
   {

@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { callback } from './util';
-import URL from './config';
+import API from '@/config/api';
 
 export default {
   async getMenu() {
-    let response = await axios.get(URL.base.getMenu);
+    let response = await axios.get(API.base.getMenu);
     return callback(response.data);
   }
 };

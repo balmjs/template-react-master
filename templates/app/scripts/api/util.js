@@ -1,4 +1,4 @@
-import { STATUS_OK } from '../config/constants';
+import { STATUS_OK } from '@/config';
 
 export const callback = ({ code, data, message }) => {
   let result = {
