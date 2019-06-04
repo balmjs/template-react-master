@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
-import DevTools from 'mobx-react-devtools';
 
-@inject('DEBUG', 'todo')
+@inject('todo')
 @observer
 class TodoList extends Component {
   constructor(props) {
@@ -23,12 +22,13 @@ class TodoList extends Component {
       <div className="page--todo todo-list">
         {store.report}
         <ul>
-          {store.todos.map((todo, idx) => <TodoView todo={todo} key={idx} />)}
+          {store.todos.map((todo, idx) => (
+            <TodoView todo={todo} key={idx} />
+          ))}
         </ul>
         {store.pendingRequests > 0 ? <marquee>Loading...</marquee> : null}
         <button onClick={this.onNewTodo}>New Todo</button>
         <small>(double-click a todo to edit)</small>
-        {this.props.DEBUG && <DevTools />}
       </div>
     );
   }
