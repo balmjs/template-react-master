@@ -1,5 +1,7 @@
+import { DEBUG } from '@/config';
+
 export default {
   base: {
-    getMenu: '/data/menu.json'
+    getMenu: `/api/menu${DEBUG ? '' : '.json'}`
   }
 };

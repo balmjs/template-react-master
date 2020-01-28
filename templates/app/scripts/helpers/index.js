@@ -12,7 +12,7 @@ const asyncComponent = (loader, collection) =>
       };
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
       if (!this.state.Component) {
         loader().then(mod => {
           let Component = mod.default || mod;
