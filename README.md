@@ -1,4 +1,4 @@
-# BalmJS template - react-master
+# BalmJS template - `react-master`
 
 > A React project with router & MobX
 
@@ -24,4 +24,4 @@ npm run dev
 npm run prod
 ```
 
-> thx [BalmJS](https://balmjs.com/)
+- thx [BalmJS](https://balmjs.com/)
