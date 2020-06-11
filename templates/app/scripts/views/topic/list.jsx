@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link, Route } from 'react-router-dom';
 import RouteWithSubRoutes from '@/routes/config';
 
@@ -54,5 +55,10 @@ class Topics extends Component {
     );
   }
 }
+
+Topics.propTypes = {
+  routes: PropTypes.array,
+  match: PropTypes.object
+};
 
 export default Topics;

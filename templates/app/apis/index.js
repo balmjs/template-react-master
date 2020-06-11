@@ -1,33 +1,22 @@
-import { Server } from 'miragejs';
 import { isDev } from '@/config';
+import { Server } from 'miragejs';
+import { getBase } from './base';
 
 if (isDev) {
   const ApiRegExp = /^\/api\//;
 
   const server = new Server({
+    models: {},
+
+    seeds(server) {
+      // More data
+    },
+
     routes() {
       this.namespace = '/api';
 
-      this.get('/menu', () => {
-        return {
-          code: 200,
-          message: 'OK',
-          data: [
-            {
-              name: 'Home',
-              url: '/home'
-            },
-            {
-              name: 'Topic',
-              url: '/topics'
-            },
-            {
-              name: 'Todo List',
-              url: '/todo-list'
-            }
-          ]
-        };
-      });
+      getBase(this);
+      // More apis
     }
   });
 

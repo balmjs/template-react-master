@@ -10,12 +10,12 @@ class TodoStore {
 
   @computed
   get uncompletedTodos() {
-    return this.todos.filter(todo => todo.completed !== true);
+    return this.todos.filter((todo) => todo.completed !== true);
   }
 
   @computed
   get completedTodosCount() {
-    return this.todos.filter(todo => todo.completed === true).length;
+    return this.todos.filter((todo) => todo.completed === true).length;
   }
 
   @computed

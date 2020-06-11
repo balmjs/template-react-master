@@ -5,9 +5,10 @@ import routes from '@/routes';
 import RouteWithSubRoutes from '@/routes/config';
 import store from '@/store';
 import { asyncComponent } from '@/helpers';
+import logo from '@/assets/logo.svg';
+
 const MyMenu = asyncComponent(() => import('@/views/components/menu'));
 const Home = asyncComponent(() => import('@/views/home'));
-import logo from '@/assets/logo.svg';
 
 class App extends Component {
   render() {

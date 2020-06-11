@@ -14,7 +14,7 @@ const asyncComponent = (loader, collection) =>
 
     UNSAFE_componentWillMount() {
       if (!this.state.Component) {
-        loader().then(mod => {
+        loader().then((mod) => {
           let Component = mod.default || mod;
           AsyncComponent.Component = Component;
           if (this.mounted) {

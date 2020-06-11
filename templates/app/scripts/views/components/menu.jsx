@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import { NavLink as Link } from 'react-router-dom';
 import { observer, inject } from 'mobx-react';
@@ -20,6 +21,10 @@ class Menu extends Component {
     );
   }
 }
+
+Menu.propTypes = {
+  menu: PropTypes.object
+};
 
 // NOTE: https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/guides/blocked-updates.md
 export default withRouter(Menu);
