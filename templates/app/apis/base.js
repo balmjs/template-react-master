@@ -9,12 +9,12 @@ export function getBase(server) {
           url: '/home'
         },
         {
-          name: 'Topic',
-          url: '/topics'
+          name: 'Demo',
+          url: '/demo'
         },
         {
-          name: 'Todo List',
-          url: '/todo-list'
+          name: 'Todo Demo',
+          url: '/todo-demo'
         }
       ]
     };
