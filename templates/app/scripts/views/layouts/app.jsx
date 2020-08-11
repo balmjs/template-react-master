@@ -19,7 +19,7 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p className="app-intro">
-          thx <a href="//balmjs.com/">BalmJS</a>
+          thx <a href="//balm.js.org/">BalmJS</a>
         </p>
         <hr />
         <Provider {...store}>
