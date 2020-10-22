@@ -1,24 +1,28 @@
-import { observable, computed, autorun } from 'mobx';
+import { makeObservable, observable, computed, action, autorun } from 'mobx';
 
 class TodoStore {
-  @observable todos = [];
-  @observable pendingRequests = 0;
+  todos = [];
+  pendingRequests = 0;
 
   constructor() {
-    autorun(() => console.log(this.report));
+    makeObservable(this, {
+      todos: observable,
+      pendingRequests: observable,
+      uncompletedTodos: computed,
+      completedTodosCount: computed,
+      report: computed,
+      addTodo: action
+    });
   }
 
-  @computed
   get uncompletedTodos() {
     return this.todos.filter((todo) => todo.completed !== true);
   }
 
-  @computed
   get completedTodosCount() {
     return this.todos.filter((todo) => todo.completed === true).length;
   }
 
-  @computed
   get report() {
     let result =
       this.uncompletedTodos.length === 0
@@ -37,6 +41,10 @@ class TodoStore {
 }
 
 const todoStore = new TodoStore();
+
+autorun(() => {
+  console.log(todoStore.report);
+});
 
 // Mock data
 todoStore.addTodo('read MobX tutorial');

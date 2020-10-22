@@ -4,9 +4,7 @@ import { withRouter } from 'react-router';
 import { NavLink as Link } from 'react-router-dom';
 import { observer, inject } from 'mobx-react';
 
-@inject('menu')
-@observer
-class Menu extends Component {
+class MenuComponent extends Component {
   render() {
     return (
       <nav>
@@ -22,9 +20,11 @@ class Menu extends Component {
   }
 }
 
-Menu.propTypes = {
+MenuComponent.propTypes = {
   menu: PropTypes.object
 };
+
+const Menu = inject('menu')(observer(MenuComponent));
 
 // NOTE: https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/guides/blocked-updates.md
 export default withRouter(Menu);

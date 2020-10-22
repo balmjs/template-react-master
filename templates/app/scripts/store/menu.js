@@ -1,15 +1,14 @@
-import { observable, autorun } from 'mobx';
+import { makeObservable, observable, action, autorun } from 'mobx';
 import API from '@/api';
 
 class MenuStore {
-  @observable items = [];
+  items = [];
 
   constructor() {
-    if (!this.items.length) {
-      autorun(() => {
-        this.getMenu();
-      });
-    }
+    makeObservable(this, {
+      items: observable,
+      getMenu: action
+    });
   }
 
   async getMenu() {
@@ -21,5 +20,11 @@ class MenuStore {
 }
 
 const menuStore = new MenuStore();
+
+autorun(() => {
+  if (!menuStore.items.length) {
+    menuStore.getMenu();
+  }
+});
 
 export default menuStore;
